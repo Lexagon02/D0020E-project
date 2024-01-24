@@ -34,24 +34,24 @@ def updateSword(sword,x,y,w,h,angle):
         h=abs(w)
     else:
         h=abs(h)
-    if(x!=0 or y!=0):       #Check if the camera sees the sword
-        x=x/5-60-(angle-180)/2  #Fine tune coords to fit into screen
-        x=-x
-        y=-y/5+40
-        
+
+    if(x!=0 and y!=0):       #Check if the camera sees the sword
+        x=57-x/20 #Fine tune coords to fit into screen
+        y=12-y/20
         if(1>h/260>-1):
             xAngle=math.degrees(math.acos(h/260))
         else:
             xAngle=0
-        #UnityEngine.Debug.Log(xAngle)
         
         curpos=sword.GetComponent(Rigidbody).position  #Get the current pos from sword
+        sword.GetComponent(Rigidbody).position=Vector3(curpos.x,curpos.y,9)
         newAcc = Vector3(x-curpos.x,y-curpos.y,0)*speed #Calculate new vector
         sword.GetComponent(Rigidbody).velocity=newAcc   #Set new velocity
         sword.GetComponent(Rigidbody).MoveRotation(UnityEngine.Quaternion.Euler(xAngle,0,angle))#Set new rotation
-        UnityEngine.Debug.Log(sword.GetComponent(Rigidbody).velocity)
+        
     else:           #If not set velocity to zero
         sword.GetComponent(Rigidbody).velocity=Vector3.zero
+        #sword.GetComponent(Rigidbody).rotation=UnityEngine.Quaternion.Euler(0,0,0)
 
 
 #Update both swords

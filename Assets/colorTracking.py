@@ -21,7 +21,7 @@ def getCoord():
   
     # Set range for red color and  
     # define mask 
-    red_lower = np.array([120, 100, 180], np.uint8) 
+    red_lower = np.array([120, 80, 180], np.uint8) 
     red_upper = np.array([180, 255, 255], np.uint8) 
     red_mask = cv2.inRange(hsvFrame, red_lower, red_upper) 
   
@@ -33,8 +33,8 @@ def getCoord():
   
     # Set range for blue color and 
     # define mask 
-    blue_lower = np.array([235, 95, 140], np.uint8) 
-    blue_upper = np.array([245, 255, 255], np.uint8) 
+    blue_lower = np.array([100, 95, 140], np.uint8) 
+    blue_upper = np.array([120, 255, 255], np.uint8) 
     blue_mask = cv2.inRange(hsvFrame, blue_lower, blue_upper) 
       
     # Morphological Transform, Dilation 
