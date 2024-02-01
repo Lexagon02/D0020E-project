@@ -7,14 +7,37 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] cubes;
     public Transform[] points;
-    public float beat = (60/130)*2; // beat of the song
+    public float beat; // beat of the song
     private float timer;
+
+    private int[] color = {0,0,0,1,1,1,0,0,1,1,0,0,0,0,1,1,1,1}; // 0 for blue 1 for red
+    private int[] pos = {}; // 0, 1, 2, 3
+    private int[] rot = {}; // 0, 1, 2, 3
 
     //private arr[] arr = [[1,1,4,0], []]; possible array to spawn boxes
     // Start is called before the first frame update
     void Start()
     {
-        
+        /*
+        // Create a temporary reference to the current scene.
+		Scene currentScene = SceneManager.GetActiveScene();
+
+		// Retrieve the name of this scene.
+		string sceneName = currentScene.name;
+
+		if (sceneName == "Main Easy") 
+		{
+			beat = (60/130)*2;
+		}
+		else if (sceneName == "Main Medium")
+		{
+			beat = (60/130)*2;
+		}
+        else if (sceneName == "Main Hard")
+		{
+			beat = (60/130)*2;
+		}
+        */
     }
 
     // Update is called once per frame
