@@ -11,7 +11,7 @@ redx=tracking[0]
 redy=tracking[1]
 redw=tracking[2]
 redh=tracking[3]
-redangle=tracking[4]
+redangle=tracking[4]+180
 
 
 #Blue sword input from colortracking.py
@@ -19,7 +19,7 @@ bluex=tracking[5]
 bluey=tracking[6]
 bluew=tracking[7]
 blueh=tracking[8]
-blueangle=tracking[9]
+blueangle=tracking[9]+180
 
 #Speed of the swords movement
 speed=5
