@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main Medium.unity
     guid: 8b11da2a428b7494994270911aa439fa
+  - enabled: 1
+    path: Assets/Options menu.unity
+    guid: a835cbc04a4654549b09e81495fc1367
   m_configObjects: {}
