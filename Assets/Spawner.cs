@@ -18,26 +18,27 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
+        
         // Create a temporary reference to the current scene.
-		Scene currentScene = SceneManager.GetActiveScene();
+		
 
 		// Retrieve the name of this scene.
-		string sceneName = currentScene.name;
+		
 
-		if (sceneName == "Main Easy") 
+		if (gameObject.tag == "Main Easy") 
+		{
+			beat = (60/130)*2;
+            Debug.Log("ok");
+		}
+		else if (gameObject.tag == "Main Medium")
 		{
 			beat = (60/130)*2;
 		}
-		else if (sceneName == "Main Medium")
+        else if (gameObject.tag == "Main Hard")
 		{
 			beat = (60/130)*2;
 		}
-        else if (sceneName == "Main Hard")
-		{
-			beat = (60/130)*2;
-		}
-        */
+        
     }
 
     // Update is called once per frame
