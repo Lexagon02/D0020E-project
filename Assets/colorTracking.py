@@ -21,20 +21,20 @@ def getCoord():
   
     # Set range for red color and  
     # define mask 
-    red_lower = np.array([120, 80, 180], np.uint8) 
-    red_upper = np.array([180, 255, 255], np.uint8) 
+    red_lower = np.array([120, 80, 60], np.uint8) 
+    red_upper = np.array([200, 255, 255], np.uint8) 
     red_mask = cv2.inRange(hsvFrame, red_lower, red_upper) 
   
     # Set range for green color and  
-    # define mask 
-    green_lower = np.array([115, 20, 99], np.uint8) 
+    # define mask q
+    green_lower = np.array([115, 80, 99], np.uint8) 
     green_upper = np.array([120, 100, 100], np.uint8) 
     green_mask = cv2.inRange(hsvFrame, green_lower, green_upper) 
   
     # Set range for blue color and 
     # define mask 
-    blue_lower = np.array([100, 95, 140], np.uint8) 
-    blue_upper = np.array([120, 255, 255], np.uint8) 
+    blue_lower = np.array([70, 120, 100], np.uint8) 
+    blue_upper = np.array([140, 255, 230], np.uint8) 
     blue_mask = cv2.inRange(hsvFrame, blue_lower, blue_upper) 
       
     # Morphological Transform, Dilation 
@@ -82,24 +82,9 @@ def getCoord():
             else:
                 angle=angle+90
             coordRed=x,y,w,h,angle
-    
-    # Creating contour to track green color 
-    contours, hierarchy = cv2.findContours(green_mask, 
-                                           cv2.RETR_TREE, 
-                                           cv2.CHAIN_APPROX_SIMPLE) 
-      
-    for pic, contour in enumerate(contours): 
-        area = cv2.contourArea(contour) 
-        if(area > 1000): 
-            x, y, w, h = cv2.boundingRect(contour) 
-            imageFrame = cv2.rectangle(imageFrame, (x, y),  
-                                       (x + w, y + h), 
-                                       (0, 255, 0), 2) 
-              
-            cv2.putText(imageFrame, "Green Colour", (x, y), 
-                        cv2.FONT_HERSHEY_SIMPLEX,  
-                        1.0, (0, 255, 0))
             
+    
+
   
     # Creating contour to track blue color 
     contours, hierarchy = cv2.findContours(blue_mask, 

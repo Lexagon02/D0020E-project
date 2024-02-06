@@ -47,7 +47,7 @@ def updateSword(sword,x,y,w,h,angle):
         sword.GetComponent(Rigidbody).position=Vector3(curpos.x,curpos.y,9)
         newAcc = Vector3(x-curpos.x,y-curpos.y,0)*speed #Calculate new vector
         sword.GetComponent(Rigidbody).velocity=newAcc   #Set new velocity
-        sword.GetComponent(Rigidbody).MoveRotation(UnityEngine.Quaternion.Euler(xAngle,0,angle))#Set new rotation
+        sword.GetComponent(Rigidbody).MoveRotation(UnityEngine.Quaternion.Euler(0,0,angle))#Set new rotation
         
     else:           #If not set velocity to zero
         sword.GetComponent(Rigidbody).velocity=Vector3.zero
