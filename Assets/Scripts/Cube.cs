@@ -12,18 +12,18 @@ public class CubeScript : MonoBehaviour
     public void OnCollisionEnter(Collision collision){
         if (collision.gameObject.layer == this.gameObject.layer) {
             //UnityEngine.Debug.Log("1");
-            Instantiate(Explosion, transform.position, Quaternion.identity);
+            //Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
             
         }
         else if (collision.gameObject.layer == this.gameObject.layer) {
-            Instantiate(Explosion, transform.position, Quaternion.identity);
+            //Instantiate(Explosion, transform.position, Quaternion.identity);
             //UnityEngine.Debug.Log("2");
             Destroy(this.gameObject);
             
             
         }
-        Instantiate(Explosion, transform.position, Quaternion.identity);
+        //Instantiate(Explosion, transform.position, Quaternion.identity);
         //UnityEngine.Debug.Log("3");
 
 
