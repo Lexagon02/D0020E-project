@@ -12,6 +12,8 @@ public class collision : MonoBehaviour
             Destroy(transform.parent.gameObject);
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(exp, 3);
+            GameManager.ScoreCount++;
+            GameManager.ScoreBonus++; 
         }
     }
     // Start is called before the first frame update

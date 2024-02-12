@@ -13,6 +13,8 @@ public class CubeScript : MonoBehaviour
     void Start()
     {
         Destroy(this.gameObject,delay);
+        GameManager.ScoreBonus = 0;
+ 
     }
 
     // Update is called once per frame

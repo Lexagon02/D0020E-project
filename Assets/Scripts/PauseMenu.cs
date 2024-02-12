@@ -45,7 +45,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
         isGamePaused = false;
-   }
+        GameManager.ScoreCount = 0;
+        GameManager.ScoreBonus = 0;
+    }
 
    
 
@@ -54,7 +56,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
         isGamePaused = false;
-   }
+        GameManager.ScoreCount = 0;
+        GameManager.ScoreBonus = 0;
+    }
 
     
 }
