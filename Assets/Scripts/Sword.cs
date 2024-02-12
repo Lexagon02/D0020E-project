@@ -28,7 +28,6 @@ public class swordObject : MonoBehaviour
                 string path= UnityEngine.Application.dataPath;
                 PythonRunner.RunFile(path + "/get.py");
             }
-            
             get();
             
 
