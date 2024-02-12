@@ -18,32 +18,32 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Difficulity();
         // Create a temporary reference to the current scene.
 		
 
-		// Retrieve the name of this scene.
-		
-
-		if (gameObject.tag == "Main Easy") 
+		// Retrieve the name of this scene. 
+    }
+    private void Difficulity()
+    {
+        if (gameObject.tag == "Main Easy") 
 		{
-			beat = (60/130)*2;
-            Debug.Log("ok");
+            Debug.Log("easy");
 		}
 		else if (gameObject.tag == "Main Medium")
 		{
-			beat = (60/130)*2;
+            Debug.Log("medium");
 		}
         else if (gameObject.tag == "Main Hard")
 		{
-			beat = (60/130)*2;
+            Debug.Log("hard");
+            
 		}
-        
     }
-
     // Update is called once per frame
     void Update()
     {
+        
         if(timer>beat){
             GameObject cube = Instantiate(cubes[Random.Range(0,2)], points[Random.Range(0,4)]); // Spawn cube at random spawn location
             cube.transform.localPosition = Vector3.zero;
