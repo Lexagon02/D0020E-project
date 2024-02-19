@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1963177327302426923}
   - component: {fileID: 2075683467046896144}
   - component: {fileID: -1884658405664991785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1205488807452076294}
   - component: {fileID: 4504464969804275831}
   - component: {fileID: 8804222686922181753}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,3 +344,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20018022e48c57d4b8c38587e20ee88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cube: {fileID: 0}
