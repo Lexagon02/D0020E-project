@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
    public static bool isGamePaused = false;
 
     public GameObject pauseMenu;
+  
 
 
     public void Update()
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isGamePaused = true;
+      
     }
 
     public void Resume()
@@ -38,6 +40,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         isGamePaused = false;
+       
+
     }
 
     public void Home()
@@ -45,7 +49,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
         isGamePaused = false;
-   }
+        GameManager.ScoreCount = 0;
+        GameManager.ScoreBonus = 0;
+    }
 
    
 
@@ -54,7 +60,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
         isGamePaused = false;
-   }
+        GameManager.ScoreCount = 0;
+        GameManager.ScoreBonus = 0;
+    }
 
     
 }

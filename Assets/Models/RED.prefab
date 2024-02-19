@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a441dfbc6903de419f71c61e04fe873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 2946357674165221615, guid: 31aca103b1b20994ca31a49a2e574e71, type: 3}
   speed: 8
 --- !u!1 &5256026241018156840
 GameObject:
@@ -345,3 +346,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 0}
+  Explosion: {fileID: 2946357674165221615, guid: 31aca103b1b20994ca31a49a2e574e71, type: 3}

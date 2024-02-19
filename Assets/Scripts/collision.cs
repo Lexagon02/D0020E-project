@@ -7,13 +7,9 @@ using System.ComponentModel;
 using UnityEngine;
 
 public class collision : MonoBehaviour
+
 {
-<<<<<<< Updated upstream
-    
-    public void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.layer == this.gameObject.layer) {
-            Destroy(transform.parent.gameObject);
-=======
+
     AudioManager audioManager;
     public GameObject Explosion;
     public CubeScript cube;
@@ -39,12 +35,7 @@ public class collision : MonoBehaviour
             GameManager.ScoreBonus++;
             audioManager.PlaySFX(audioManager.BoxDestroyed);
 
->>>>>>> Stashed changes
         }
-        else if (collision.gameObject.layer == this.gameObject.layer) {
-            Destroy(transform.parent.gameObject);
-        }
-        
     }
     // Start is called before the first frame update
     void Start()
