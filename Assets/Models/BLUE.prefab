@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20018022e48c57d4b8c38587e20ee88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cube: {fileID: 0}
   Explosion: {fileID: 2946357674165221615, guid: 31aca103b1b20994ca31a49a2e574e71, type: 3}
 --- !u!1 &5076500619251554971
 GameObject:
@@ -237,7 +238,7 @@ GameObject:
   - component: {fileID: 2407665857568475000}
   - component: {fileID: 160367454551071611}
   - component: {fileID: -5505155536668725376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BLUE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
