@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static System.Net.Mime.MediaTypeNames;
 
 public class MainMenu : MonoBehaviour
 {
@@ -25,12 +29,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main Easy");
         PlayerPrefs.SetInt("Difficulty", 3);
     }
+    public void Highscore()
+    {
+        SceneManager.LoadScene("Highscore");
+    }
 
 
 
     public void Quit() {
     #if UNITY_STANDALONE
-        Application.Quit();
+        UnityEngine.Application.Quit();
     #endif
     #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

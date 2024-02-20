@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static System.Net.Mime.MediaTypeNames;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,8 +13,8 @@ public class PauseMenu : MonoBehaviour
    public static bool isGamePaused = false;
 
     public GameObject pauseMenu;
-  
 
+   
 
     public void Update()
     {
@@ -32,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isGamePaused = true;
-      
+        //pauseMenu.GetComponent<SaveScript>().LoadFile();
     }
 
     public void Resume()
@@ -46,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
    {
+        //pauseMenu.GetComponent<SaveScript>().SaveFile(currentScore, currentName);
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
         isGamePaused = false;

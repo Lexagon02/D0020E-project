@@ -13,6 +13,7 @@ public class collision : MonoBehaviour
     AudioManager audioManager;
     public GameObject Explosion;
     public CubeScript cube;
+
     private Rigidbody rb;
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class collision : MonoBehaviour
             rb=cube.gameObject.AddComponent<Rigidbody>();
             transform.parent.gameObject.layer=9;
             rb.velocity = new Vector3(3, -15, 0);
-            //rb.AddTorque(UnityEngine.Random.Range(0, 100), UnityEngine.Random.Range(0, 100), UnityEngine.Random.Range(0, 100));
+            rb.mass = 2000;
             Destroy(transform.parent.gameObject,3);
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(exp, 3);
