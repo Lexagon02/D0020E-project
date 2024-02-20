@@ -13,10 +13,24 @@ public class Highscore : MonoBehaviour
 
     private void Awake()
     {
-        
+
         entryContainer = transform.Find("entryContainer");
         entryTemplate = entryContainer.Find("entryTemplate");
         entryTemplate.gameObject.SetActive(false);
+        /*
+        entryList = new List<scoreEntry>()
+        {
+            new scoreEntry{score=3,name="asd" },
+            new scoreEntry{score=3,name="asd" }
+        };
+
+        string jsonTable = JsonUtility.ToJson(entryList);
+        PlayerPrefs.SetString("highscoreTable", jsonTable);
+        PlayerPrefs.Save();
+        */
+
+
+
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
         entryList = highscores.entryList;
@@ -25,7 +39,7 @@ public class Highscore : MonoBehaviour
         //Sort the list of scores
         for (int i = 0; i < entryList.Count; i++)
         {
-            for (int j = i+1; j< entryList.Count; j++)
+            for (int j = i + 1; j < entryList.Count; j++)
             {
                 if (entryList[j].score > entryList[i].score)
                 {
@@ -60,18 +74,48 @@ public class Highscore : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    private void AddHighscoreEntry(int score, string name)
+    public void AddHighscoreEntry(int score, string name)
     {
-        scoreEntry entry = new scoreEntry { score = score, name = name };
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-        highscores.entryList.Add(entry);
 
-        string jsonTable = JsonUtility.ToJson(highscores);
-        PlayerPrefs.SetString("highscoreTable", jsonTable);
-        PlayerPrefs.Save();
+        for (int i = 0; i < highscores.entryList.Count; i++)
+        {
+            for (int j = i + 1; j < highscores.entryList.Count; j++)
+            {
+                if (highscores.entryList[j].score > highscores.entryList[i].score)
+                {
+                    scoreEntry temp = highscores.entryList[i];
+                    highscores.entryList[i] = highscores.entryList[j];
+                    highscores.entryList[j] = temp;
+                }
+            }
+        }
+
+
+        scoreEntry entry = new scoreEntry { score = score, name = name };
+        if  (highscores.entryList.Count > 10 ){
+            UnityEngine.Debug.Log("<10");
+            UnityEngine.Debug.Log((highscores.entryList[9].score));
+            if (highscores.entryList[9].score < score){
+                UnityEngine.Debug.Log("9");
+                highscores.entryList[9] = entry;
+                string jsonTable = JsonUtility.ToJson(highscores);
+                PlayerPrefs.SetString("highscoreTable", jsonTable);
+                PlayerPrefs.Save();
+            }
+        }
+        else
+        {
+            UnityEngine.Debug.Log("else");
+            highscores.entryList.Add(entry);
+            string jsonTable = JsonUtility.ToJson(highscores);
+            PlayerPrefs.SetString("highscoreTable", jsonTable);
+            PlayerPrefs.Save();
+        }
+
     }
 
     private class Highscores
