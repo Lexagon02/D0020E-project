@@ -31,7 +31,8 @@ public class collision : MonoBehaviour
             rb.mass = 2000;
             Destroy(transform.parent.gameObject,3);
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
-            Destroy(exp, 3);
+            exp.transform.parent = cube.transform;
+            Destroy(exp, 1);
             GameManager.ScoreCount++;
             GameManager.ScoreBonus++;
             audioManager.PlaySFX(audioManager.BoxDestroyed);
