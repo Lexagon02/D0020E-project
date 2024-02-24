@@ -22,18 +22,24 @@ public class Spawner : MonoBehaviour
 		{
             int i = 0;
             beat = 0.75;
+            // om speed ändras måste 8 bytas ut mot den nya hastigheten
+            // och se till så att delay inte är negativt så ändra *7 till något
             delay = (54-9)/8-beat*7;
         }
 		else if (diff == 2)
 		{
             int i = 0;
-            beat = 0.72289;
-            delay = (54-9)/11-beat*5;
+            beat = 0.72289;  // (166/60)*2
+            // om speed ändras måste 11 bytas ut mot den nya hastigheten
+            // och se till så att delay inte är negativt så ändra *5 till något
+            delay = (54-9)/11-beat*5;       
         }
         else if (diff == 3)
 		{
             int i = 0;
-            beat = 0.75;
+            beat = 0.75;    // (160/60)*2
+            // om speed ändras måste 14 bytas ut mot den nya hastigheten
+            // och se till så att delay inte är negativt så ändra *4 till något
             delay = (54-9)/14-beat*4;
 		}
     }
