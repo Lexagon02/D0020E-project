@@ -11090,7 +11090,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1741045863}
   m_Father: {fileID: 1844865082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -17227,7 +17228,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -18414,17 +18415,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1300203982}
   SFXSource: {fileID: 1871564411}
-
   easy: {fileID: 1320234935}
   medium: {fileID: 1156767072}
   hard: {fileID: 1733464289}
   easyClip: {fileID: 8300000, guid: 0860cb17ea84f8843ba4fab8fd6e228e, type: 3}
   mediumClip: {fileID: 8300000, guid: 01b447dd1df84a645b44896d3c8aa056, type: 3}
   hardClip: {fileID: 8300000, guid: f67b179c645b9f84db66b7a804a8b63f, type: 3}
-  BoxDestroyed: {fileID: 8300000, guid: edc5759e2c5b64b52a0114326f682a10, type: 3}
-
+  BoxDestroyed: {fileID: 0}
   Music: {fileID: 0}
-  background: {fileID: 8300000, guid: 6306498bbea9342a58ad61d5f7128830, type: 3}
+  background: {fileID: 0}
 --- !u!4 &1687764408
 Transform:
   m_ObjectHideFlags: 0
@@ -18446,7 +18445,6 @@ Transform:
   - {fileID: 1871564412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-
 --- !u!1 &1733464288
 GameObject:
   m_ObjectHideFlags: 0
@@ -18709,7 +18707,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741045862}
   m_CullTransparentMesh: 1
-
 --- !u!1 &1755826601
 GameObject:
   m_ObjectHideFlags: 0
@@ -29500,3 +29497,4 @@ SceneRoots:
   - {fileID: 373299006294481464}
   - {fileID: 1687764408}
   - {fileID: 681720723}
+  - {fileID: 1221362897}
