@@ -12,9 +12,10 @@ public class CubeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int diff = PlayerPrefs.GetInt("Difficulty");
+        speed = 5 + 3*diff; // speed = 8 if easy, 11 if medium, 14 if hard 
         Destroy(this.gameObject,delay);
         GameManager.ScoreBonus = 0;
- 
     }
 
     // Update is called once per frame
