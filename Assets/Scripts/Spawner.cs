@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     public Transform[] points;
     private double beat; // beat of the song
     private double timer;
+    private double delay;
     int i;
 
     public int[] color = {0,0,0,1,1,1,0,0,1,1,0,0,0,0,1,1,1,1};
@@ -20,17 +21,20 @@ public class Spawner : MonoBehaviour
         if (diff == 1) 
 		{
             int i = 0;
-            beat = 1.142857;
+            beat = 0.75;
+            delay = (54-9)/8-beat*7;
         }
 		else if (diff == 2)
 		{
             int i = 0;
-            beat = 1.142857;
+            beat = 0.72289;
+            delay = (54-9)/11-beat*5;
         }
         else if (diff == 3)
 		{
             int i = 0;
-            beat = 1.142857;
+            beat = 0.75;
+            delay = (54-9)/14-beat*4;
 		}
     }
     private int[] boxArr(int i){
@@ -63,8 +67,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(timer>beat){
+        if(timer > delay && delay != 0){
+            timer -= delay;     // reset timer
+            delay = 0;
+        }
+        if(timer>beat && delay == 0){
             int[] arr = boxArr(i);
             int c = arr[0];
             int p = arr[1];
