@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     private bool isPaused = false;
     
 
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -36,6 +37,7 @@ public class AudioManager : MonoBehaviour
         if(diff == 2){medium.PlayOneShot(mediumClip);}
         if(diff == 3){hard.PlayOneShot(hardClip);}
     }
+
     // Update is called once per frame
     void Update()
     {
