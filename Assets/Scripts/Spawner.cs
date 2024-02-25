@@ -84,7 +84,6 @@ public class Spawner : MonoBehaviour
             if(c == 0 || c == 1){
                 GameObject cube = Instantiate(cubes[c], points[p]); 
                 cube.transform.localPosition = Vector3.zero;
-                timer -= beat;
             }
             else if (c == 2){
                 if(p == 0){   // blue top left, red top right
@@ -111,8 +110,9 @@ public class Spawner : MonoBehaviour
                     GameObject cube2 = Instantiate(cubes[0], points[3]);
                     cube2.transform.localPosition = Vector3.zero;
                 }
-                timer -= beat;    
+                    
             }
+	    timer -= beat;
             i++;
         }
 
