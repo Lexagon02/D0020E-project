@@ -76,55 +76,48 @@ public class Highscore : MonoBehaviour
     {
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
+        Debug.Log(jsonString);
+        if (jsonString == "")
+        {
+            jsonString = "{\"entryList\":[{\"score\":0,\"name\":\"AAA\"}]}";
+        }
+        Debug.Log(jsonString);
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
         scoreEntry entry = new scoreEntry { score = score, name = name };
-        if (highscores.entryList == null)
+        for (int i = 0; i < highscores.entryList.Count; i++)
         {
-            entryList = new List<scoreEntry>()
+            for (int j = i + 1; j < highscores.entryList.Count; j++)
             {
-            entry
-            };
-            string jsonTable = JsonUtility.ToJson(entryList);
-            PlayerPrefs.SetString("highscoreTable", jsonTable);
-            PlayerPrefs.Save();
-
+                if (highscores.entryList[j].score > highscores.entryList[i].score)
+                {
+                    scoreEntry temp = highscores.entryList[i];
+                    highscores.entryList[i] = highscores.entryList[j];
+                    highscores.entryList[j] = temp;
+                }
+            }
         }
-        else
+
+
+        if (highscores.entryList.Count > 10)
         {
-            for (int i = 0; i < highscores.entryList.Count; i++)
+            if (highscores.entryList[9].score < score)
             {
-                for (int j = i + 1; j < highscores.entryList.Count; j++)
-                {
-                    if (highscores.entryList[j].score > highscores.entryList[i].score)
-                    {
-                        scoreEntry temp = highscores.entryList[i];
-                        highscores.entryList[i] = highscores.entryList[j];
-                        highscores.entryList[j] = temp;
-                    }
-                }
-            }
-
-           
-            if (highscores.entryList.Count > 10)
-            {
-                if (highscores.entryList[9].score < score)
-                {
-                    highscores.entryList[9] = entry;
-                    string jsonTable = JsonUtility.ToJson(highscores);
-                    PlayerPrefs.SetString("highscoreTable", jsonTable);
-                    PlayerPrefs.Save();
-                }
-
-            }
-            else
-            {
-                highscores.entryList.Add(entry);
+                highscores.entryList[9] = entry;
                 string jsonTable = JsonUtility.ToJson(highscores);
                 PlayerPrefs.SetString("highscoreTable", jsonTable);
                 PlayerPrefs.Save();
             }
+
         }
-        
+        else
+        {
+            highscores.entryList.Add(entry);
+            string jsonTable = JsonUtility.ToJson(highscores);
+            PlayerPrefs.SetString("highscoreTable", jsonTable);
+            PlayerPrefs.Save();
+        }
+
+
 
 
     }
