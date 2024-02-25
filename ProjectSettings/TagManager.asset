@@ -8,6 +8,8 @@ TagManager:
   - Medium
   - Hard
   - Audio
+  - activeScore
+  - score
   layers:
   - Default
   - TransparentFX

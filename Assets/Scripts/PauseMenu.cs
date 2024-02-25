@@ -86,7 +86,7 @@ public class PauseMenu : MonoBehaviour
     {
             s = input;
             UnityEngine.Debug.Log(input);
-            pauseMenu.GetComponent<Highscore>().AddHighscoreEntry(GameManager.ScoreCount, input);
+            pauseMenu.GetComponent<Highscore>().AddHighscoreEntry(GameManager.ScoreCount, input, PlayerPrefs.GetInt("Difficulty"));
             nameMenu.SetActive(false);
             goHome();
 
