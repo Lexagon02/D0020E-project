@@ -105,9 +105,9 @@ public class Highscore : MonoBehaviour
 
 
         int rank = transformList.Count+1;
-        entryTransform.Find("posText").GetComponent<Text>().text = rank.ToString();
-        entryTransform.Find("nameText").GetComponent<Text>().text = entry.name;
-        entryTransform.Find("scoreText").GetComponent<Text>().text = entry.score.ToString();
+        entryTransform.Find("posText").GetComponent<TextMeshProUGUI>().text = rank.ToString();
+        entryTransform.Find("nameText").GetComponent<TextMeshProUGUI>().text = entry.name;
+        entryTransform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = entry.score.ToString();
         transformList.Add(entryTransform);
     }
 
