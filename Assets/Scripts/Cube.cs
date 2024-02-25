@@ -22,6 +22,7 @@ public class CubeScript : MonoBehaviour
         if(diff == 1)
         {
             delay = 5.8F;
+           
         }
         else if(diff == 2)
         {
@@ -34,6 +35,7 @@ public class CubeScript : MonoBehaviour
         else
         {
             delay = 6.0F;
+
         }
         Destroy(this.gameObject,delay);
         GameManager.ScoreBonus = 0;

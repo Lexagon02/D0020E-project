@@ -63,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = false;
         GameManager.ScoreCount = 0;
         GameManager.ScoreBonus = 0;
+        GameManager.ScoreSum = 0;
     }
 
     public void goHome()
@@ -72,6 +73,7 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = false;
         GameManager.ScoreCount = 0;
         GameManager.ScoreBonus = 0;
+        GameManager.ScoreSum = 0;
     }
 
     public void Save()

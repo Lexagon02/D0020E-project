@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI mainText;
     public static int ScoreCount = 0;
     public static int ScoreBonus = 0;
+    public static int ScoreSum = 0;
 
 
 
@@ -18,15 +19,18 @@ public class GameManager : MonoBehaviour
     {
         if (ScoreBonus <= 1)
         {
-            mainText.text = "Score: " + ScoreCount;
+            ScoreSum = ScoreCount;
+            mainText.text = "Score: " + ScoreSum + "\n x " + ScoreBonus;
         }
         else if(ScoreBonus > 1 &&  ScoreBonus <= 4)
         {
-            mainText.text = "Score: " + ScoreCount + ScoreBonus*2;
+            ScoreSum = ScoreCount + ScoreBonus * 2;
+            mainText.text = "Score: " + ScoreSum + "\n x " + ScoreBonus*2;
         }
         else if(ScoreBonus > 4)
-        { 
-            mainText.text = "Score: " + ScoreCount + 4 * 2;
+        {
+            ScoreSum = ScoreCount + 4 * 2;
+            mainText.text = "Score: " +ScoreSum + "\n x " + ScoreBonus*2;
         }
 
     }
