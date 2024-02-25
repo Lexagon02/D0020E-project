@@ -22,6 +22,8 @@ public class collision : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision){
         if (collision.gameObject.layer == this.gameObject.layer) {
+            GameManager.ScoreCount++;
+            GameManager.ScoreBonus++;
             UnityEngine.Debug.Log(this.gameObject);
             cube = transform.parent.GetComponent<CubeScript>();
             cube.speed = 8;
@@ -33,8 +35,6 @@ public class collision : MonoBehaviour
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
             exp.transform.parent = cube.transform;
             Destroy(exp, 1);
-            GameManager.ScoreCount++;
-            GameManager.ScoreBonus++;
             audioManager.PlaySFX(audioManager.BoxDestroyed);
 
         }
