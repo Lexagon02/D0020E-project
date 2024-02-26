@@ -10,6 +10,7 @@ TagManager:
   - Audio
   - activeScore
   - score
+  - menuMusic
   layers:
   - Default
   - TransparentFX

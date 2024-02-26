@@ -567,6 +567,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1061742659}
+        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &108325811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1029,7 @@ GameObject:
   - component: {fileID: 439419671}
   - component: {fileID: 439419672}
   m_Layer: 0
-  m_Name: difficulties
+  m_Name: Difficulties
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1690,13 +1702,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1061742658}
   - component: {fileID: 1061742657}
+  - component: {fileID: 1061742659}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: menuMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1061742657
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1708,7 +1721,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 01b447dd1df84a645b44896d3c8aa056, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
@@ -1808,6 +1821,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061742659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061742656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7737ee260be3aa42b0a08c56db2ac43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1256543196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2219,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1061742659}
+        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1782165182}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Easy
@@ -2745,6 +2782,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1782165182}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Medium
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1061742659}
+        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+        m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3572,6 +3621,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1061742659}
+        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 506137608}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: Easy
