@@ -33,9 +33,20 @@ public class AudioManager : MonoBehaviour
     }
     public void musicPlayer(){
         int diff = PlayerPrefs.GetInt("Difficulty");
-        if(diff == 1){easy.PlayOneShot(easyClip);}
-        if(diff == 2){medium.PlayOneShot(mediumClip);}
-        if(diff == 3){hard.PlayOneShot(hardClip);}
+        float musicVolume = PlayerPrefs.GetFloat("gameMusic");
+        if (diff == 1){
+            easy.PlayOneShot(easyClip);
+            Debug.Log(musicVolume);
+            easy.volume=musicVolume;
+        }
+        if(diff == 2){
+            medium.PlayOneShot(mediumClip);
+            medium.volume = musicVolume;
+        }
+        if(diff == 3){
+            hard.PlayOneShot(hardClip);
+            hard.volume = musicVolume;
+        }
     }
 
     // Update is called once per frame
