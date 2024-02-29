@@ -21,8 +21,8 @@ def getCoord():
   
     # Set range for red color and  
     # define mask 
-    red_lower = np.array([120, 80, 60], np.uint8) 
-    red_upper = np.array([200, 255, 255], np.uint8) 
+    red_lower = np.array([0, 80, 80], np.uint8) 
+    red_upper = np.array([30, 255, 255], np.uint8)  
     red_mask = cv2.inRange(hsvFrame, red_lower, red_upper) 
   
     # Set range for green color and  
