@@ -22,6 +22,7 @@ public class collision : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision){
         if (collision.gameObject.layer == this.gameObject.layer) {
+            Debug.Log(gameObject.layer);
             GameManager.ScoreCount++;
             GameManager.ScoreBonus++;
             UnityEngine.Debug.Log(this.gameObject);
