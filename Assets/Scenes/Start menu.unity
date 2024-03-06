@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -567,8 +567,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1061742659}
-        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
@@ -1709,7 +1709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1061742657
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1721,7 +1721,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 01b447dd1df84a645b44896d3c8aa056, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.18
   m_Pitch: 1
   Loop: 1
@@ -2219,8 +2219,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1061742659}
-        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
@@ -2791,8 +2791,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1061742659}
-        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
@@ -2934,6 +2934,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Medium
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1730203196
@@ -3621,8 +3633,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1061742659}
-        m_TargetAssemblyTypeName: MenuMusic, Assembly-CSharp
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StopMusic
         m_Mode: 1
         m_Arguments:
@@ -3776,6 +3788,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Main Hard
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 506137608}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2094660828

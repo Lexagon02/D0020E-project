@@ -38,7 +38,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Highscore");
     }
-
+    public void StopMusic()
+    {
+        GameObject music = GameObject.FindGameObjectWithTag("menuMusic");
+        DestroyObject(music);
+        print("stop");
+    }
 
 
     public void Quit() {

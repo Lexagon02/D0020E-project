@@ -44,5 +44,7 @@ public class Options : MonoBehaviour
     {
         menuMusic = newValue;
         PlayerPrefs.SetFloat("menuMusic", newValue);
+        GameObject music = GameObject.FindGameObjectWithTag("menuMusic");
+        music.GetComponent<MenuMusic>().changeVolume();
     }
 }
