@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
             easy.volume=musicVolume;
         }
         if(diff == 2){
-            medium.PlayDelayed(5);  // swich 5 to beat for the difficulity in spawner to match cubes
+            medium.PlayDelayed(3.45f);  // swich 5 to beat for the difficulity in spawner to match cubes
             medium.volume = musicVolume;
         }
         if(diff == 3){

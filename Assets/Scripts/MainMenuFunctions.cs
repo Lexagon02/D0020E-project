@@ -41,12 +41,9 @@ public class MainMenu : MonoBehaviour
     public void StopMusic()
     {
         GameObject music = GameObject.FindGameObjectWithTag("menuMusic");
-        print(music);
         DestroyObject(music);
         print("stop");
-       
     }
-
 
 
     public void Quit() {

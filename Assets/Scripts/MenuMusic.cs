@@ -8,11 +8,12 @@ public class MenuMusic : MonoBehaviour
     private AudioSource audioSource;
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
 
+        DontDestroyOnLoad(transform.gameObject);
+        
         if (GameObject.FindGameObjectsWithTag("menuMusic").Length == 1)
         {
-            audioSource = GetComponent<AudioSource>();
+            changeVolume();
             PlayMusic();
         }
         else
@@ -20,6 +21,13 @@ public class MenuMusic : MonoBehaviour
             DestroyObject(transform.gameObject);
         }
 
+    }
+
+    public void changeVolume()
+    {
+        audioSource = GetComponent<AudioSource>();
+        float menuVolume = PlayerPrefs.GetFloat("menuMusic");
+        audioSource.volume = menuVolume;
     }
 
     public void PlayMusic()
