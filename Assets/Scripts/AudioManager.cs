@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         int diff = PlayerPrefs.GetInt("Difficulty");
         float musicVolume = PlayerPrefs.GetFloat("gameMusic");
         if (diff == 1){
-            easy.PlayDelayed(5); // swich 5 to beat for the difficulity in spawner to match cubes
+            easy.PlayDelayed(5.77f); // swich 5 to beat for the difficulity in spawner to match cubes
             Debug.Log(musicVolume);
             easy.volume=musicVolume;
         }
