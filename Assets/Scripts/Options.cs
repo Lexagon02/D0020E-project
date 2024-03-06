@@ -16,13 +16,13 @@ public class Options : MonoBehaviour
     void Awake()
     {
         //Set sliders to saved values, or default them to 50
-        if (PlayerPrefs.GetFloat("menuMusic") == null) { menuMusic = 50f;}
+        if (PlayerPrefs.GetFloat("menuMusic") == null) { menuMusic = 0.5f;}
         else { menuMusic = PlayerPrefs.GetFloat("menuMusic");}
 
-        if (PlayerPrefs.GetFloat("gameMusic") == null){gameMusic = 50f;}
+        if (PlayerPrefs.GetFloat("gameMusic") == null){gameMusic = 0.5f;}
         else{gameMusic = PlayerPrefs.GetFloat("gameMusic");}
 
-        if (PlayerPrefs.GetFloat("gameSound") == null){ gameSound = 50f;}
+        if (PlayerPrefs.GetFloat("gameSound") == null){ gameSound = 0.5f;}
         else{ gameSound = PlayerPrefs.GetFloat("gameSound");};
 
         menuMusicSlider.value = menuMusic;
@@ -32,6 +32,7 @@ public class Options : MonoBehaviour
 
     public void changeGameSound(float newValue)
     {
+        print(newValue);
         gameSound= newValue;
         PlayerPrefs.SetFloat("gameSound", newValue);
     }
