@@ -11,6 +11,7 @@ TagManager:
   - activeScore
   - score
   - menuMusic
+  - pause
   layers:
   - Default
   - TransparentFX

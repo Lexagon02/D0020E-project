@@ -34,16 +34,16 @@ public class AudioManager : MonoBehaviour
     public void musicPlayer(){
         int diff = PlayerPrefs.GetInt("Difficulty");
         float musicVolume = PlayerPrefs.GetFloat("gameMusic");
-        if (diff == 1){
+        if (diff == 1){ // easy
             easy.PlayDelayed(5.77f); // swich 5 to beat for the difficulity in spawner to match cubes
             Debug.Log(musicVolume);
             easy.volume=musicVolume;
         }
-        if(diff == 2){
+        if(diff == 2){ // medium
             medium.PlayDelayed(3.45f);  // swich 5 to beat for the difficulity in spawner to match cubes
             medium.volume = musicVolume;
         }
-        if(diff == 3){
+        if(diff == 3){ // hard
             hard.PlayDelayed(0.75f);    // swich to beat for the difficulity in spawner to match cubes
             hard.volume = musicVolume;
         }
@@ -58,7 +58,6 @@ public class AudioManager : MonoBehaviour
             if(diff == 2){medium.Pause();}
             if(diff == 3){hard.Pause();}
             isPaused = true;
-            Debug.Log("paused");
         }
         if(PauseMenu.isGamePaused == false && isPaused == true){
             int diff = PlayerPrefs.GetInt("Difficulty");
@@ -72,15 +71,7 @@ public class AudioManager : MonoBehaviour
         musicPlayer();
     }
 
-    public void playEasyMusic(AudioSource music){
-        easy.Play(0);
-    }
-    public void playMediumMusic(AudioSource music){
-        medium.Play(0);
-    }
-    public void playHardMusic(AudioSource music){
-        hard.Play(0);
-    }
+    
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
