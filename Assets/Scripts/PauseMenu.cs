@@ -61,7 +61,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
         isGamePaused = false;
-        GameManager.ScoreCount = 0;
         GameManager.ScoreBonus = 0;
         GameManager.ScoreSum = 0;
     }
@@ -71,7 +70,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
         isGamePaused = false;
-        GameManager.ScoreCount = 0;
         GameManager.ScoreBonus = 0;
         GameManager.ScoreSum = 0;
     }
@@ -88,7 +86,7 @@ public class PauseMenu : MonoBehaviour
     {
             s = input;
             UnityEngine.Debug.Log(input);
-            pauseMenu.GetComponent<Highscore>().AddHighscoreEntry(GameManager.ScoreCount, input, PlayerPrefs.GetInt("Difficulty"));
+            pauseMenu.GetComponent<Highscore>().AddHighscoreEntry(GameManager.ScoreSum, input, PlayerPrefs.GetInt("Difficulty"));
             nameMenu.SetActive(false);
             goHome();
 

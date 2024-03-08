@@ -6,32 +6,41 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
-
-    public TextMeshProUGUI mainText;
-    public static int ScoreCount = 0;
-    public static int ScoreBonus = 0;
+   
     public static int ScoreSum = 0;
+    public static int ScoreBonus = 0;
 
 
 
     // Update is called once per frame
-    void Update()
+    public static void Score()
     {
         if (ScoreBonus <= 1)
         {
-            ScoreSum = ScoreCount;
-            mainText.text = "Score: " + ScoreSum + "\n x " + ScoreBonus;
+            ScoreSum += ScoreBonus;
         }
-        else if(ScoreBonus > 1 &&  ScoreBonus <= 4)
+       if (ScoreBonus > 1 && ScoreBonus < 5)
         {
-            ScoreSum = ScoreCount + ScoreBonus * 2;
-            mainText.text = "Score: " + ScoreSum + "\n x " + ScoreBonus*2;
+            ScoreSum += ScoreBonus;
+
         }
-        else if(ScoreBonus > 4)
-        {
-            ScoreSum = ScoreCount + 4 * 2;
-            mainText.text = "Score: " +ScoreSum + "\n x " + ScoreBonus*2;
-        }
+       if (ScoreBonus >= 5)
+       {
+            ScoreBonus = 4;
+            ScoreSum += ScoreBonus;
+       }
+       
+    }
+
+    void Update()
+    {
+        Script_show.ScoreShow_ = ScoreBonus+ 1;
+        Script_Sum.ScoreSum_ = ScoreSum;
+
+
 
     }
+       
+
+    
 }

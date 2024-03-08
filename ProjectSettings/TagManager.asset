@@ -11,6 +11,7 @@ TagManager:
   - activeScore
   - score
   - menuMusic
+  - Box
   - pause
   layers:
   - Default

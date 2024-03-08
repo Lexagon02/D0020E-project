@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+//using System.Diagnostics;
+
 //using System.Media;
 using UnityEngine;
 
@@ -23,8 +25,9 @@ public class collision : MonoBehaviour
     public void OnCollisionEnter(Collision collision){
         if (collision.gameObject.layer == this.gameObject.layer) {
             Debug.Log(gameObject.layer);
-            GameManager.ScoreCount++;
+            GameManager.ScoreSum++;
             GameManager.ScoreBonus++;
+            GameManager.Score();
             UnityEngine.Debug.Log(this.gameObject);
             cube = transform.parent.GetComponent<CubeScript>();
             cube.speed = 8;
@@ -38,6 +41,23 @@ public class collision : MonoBehaviour
             Destroy(exp, 1);
             audioManager.PlaySFX(audioManager.BoxDestroyed);
 
+        }
+    }
+
+    public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == this.gameObject.tag)
+        {
+          
+            GameManager.ScoreBonus = 0;
+            GameManager.Score();
+            Script_show.showBonus = true;
+            cube = transform.parent.GetComponent<CubeScript>();
+            cube.speed = 1;
+            cube = transform.parent.GetComponent<CubeScript>();
+            rb = cube.gameObject.AddComponent<Rigidbody>();
+            rb.velocity = new Vector3(-1, 0, 0);
+            Destroy(transform.parent.gameObject);
         }
     }
     // Start is called before the first frame update
