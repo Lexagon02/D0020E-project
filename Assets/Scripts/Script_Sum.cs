@@ -16,13 +16,13 @@ public class Script_Sum : MonoBehaviour
 
     void Start()
     {
-        Test = GetComponent<TextMeshProUGUI>();
+        Test = GetComponent<TextMeshProUGUI>(); //finds the textmesh component
     }
 
     public void Update()
     {
         
-        Test.text = "Score: " + ScoreSum_;
+        Test.text = "Score: " + ScoreSum_; // shows the score on the screen
     }
 
 

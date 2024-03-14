@@ -20,8 +20,8 @@ public class Script_show : MonoBehaviour
 
     void Start()
     {
-        Text = GetComponent<TextMeshProUGUI>();
-        anim = GetComponent<Animator>();
+        Text = GetComponent<TextMeshProUGUI>(); //finds the textmesh component
+        anim = GetComponent<Animator>(); //finds the animation component
     }
 
 
@@ -29,11 +29,11 @@ public class Script_show : MonoBehaviour
 
     void Update()
     { 
-        Text.text = "x" + ScoreShow_;
-        if (showBonus == true)
+        Text.text = "x" + ScoreShow_; // shows the score on the screen
+        if (showBonus == true) // if true show the animation
         {
-            anim.SetTrigger("FadeTrigger");
-            showBonus = false;
+            anim.SetTrigger("FadeTrigger"); //triggers the animation
+            showBonus = false; //after the animation dont show it again
         }
         
     }

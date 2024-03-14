@@ -25,9 +25,10 @@ public class collision : MonoBehaviour
     public void OnCollisionEnter(Collision collision){
         if (collision.gameObject.layer == this.gameObject.layer) {
             Debug.Log(gameObject.layer);
-            GameManager.ScoreSum++;
-            GameManager.ScoreBonus++;
-            GameManager.Score();
+            GameManager.ScoreSum++; //add 1 to scoreSum
+            GameManager.ScoreBonus++; // add 1 to bonus
+            GameManager.Score(); //calcukates the bonus
+            Script_show.showBonus = true; //fade animation is on
             UnityEngine.Debug.Log(this.gameObject);
             cube = transform.parent.GetComponent<CubeScript>();
             cube.speed = 8;
@@ -49,9 +50,9 @@ public class collision : MonoBehaviour
         if (collision.gameObject.tag == this.gameObject.tag)
         {
           
-            GameManager.ScoreBonus = 0;
-            GameManager.Score();
-            Script_show.showBonus = true;
+            GameManager.ScoreBonus = 0; //resets scorebonus to zero
+            GameManager.Score();    //calcukates the bonus
+            Script_show.showBonus = true; //fade animation is on
             cube = transform.parent.GetComponent<CubeScript>();
             cube.speed = 1;
             cube = transform.parent.GetComponent<CubeScript>();

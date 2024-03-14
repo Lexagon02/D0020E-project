@@ -61,8 +61,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
         isGamePaused = false;
-        GameManager.ScoreBonus = 0;
-        GameManager.ScoreSum = 0;
+        GameManager.ScoreBonus = 0;  //Resets the score
+        GameManager.ScoreSum = 0;  //Resets the score
     }
 
     public void goHome()
@@ -70,8 +70,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
         isGamePaused = false;
-        GameManager.ScoreBonus = 0;
-        GameManager.ScoreSum = 0;
+        GameManager.ScoreBonus = 0; //Resets the score
+        GameManager.ScoreSum = 0;  //Resets the score
     }
 
     public void Save()

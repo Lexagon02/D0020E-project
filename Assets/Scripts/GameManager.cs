@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public static void Score()
     {
-        if (ScoreBonus <= 1)
+        if (ScoreBonus <= 1)    //Calculates the scorebonus
         {
             ScoreSum += ScoreBonus;
         }
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
        if (ScoreBonus >= 5)
        {
-            ScoreBonus = 4;
+            ScoreBonus = 4; //max score Bonus is 4
             ScoreSum += ScoreBonus;
        }
        
@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Script_show.ScoreShow_ = ScoreBonus+ 1;
-        Script_Sum.ScoreSum_ = ScoreSum;
+        Script_show.ScoreShow_ = ScoreBonus+ 1; //adds 1 so the bonus cant be zero, updates the bonus
+        Script_Sum.ScoreSum_ = ScoreSum; //updates the scoreSUm
 
 
 
