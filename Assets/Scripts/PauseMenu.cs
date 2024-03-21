@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject nameMenu;
 
 
-    public void Update()
+    public void Update() // Check for escape key
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -32,14 +32,14 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void Pause()
+    public void Pause() // pause the game and music
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isGamePaused = true;
     }
 
-    public void Resume()
+    public void Resume() // resume the game and music
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    public void Home()
+    public void Home() // go to extiMenu
    {
         pauseMenu.SetActive(false);
         exitMenu.SetActive(true);
@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
 
    
 
-   public void Restart()
+   public void Restart() // restart the level
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
@@ -65,7 +65,7 @@ public class PauseMenu : MonoBehaviour
         GameManager.ScoreSum = 0;  //Resets the score
     }
 
-    public void goHome()
+    public void goHome() // go to start menu
     {
         SceneManager.LoadScene("Start menu");
         Time.timeScale = 1;
@@ -74,7 +74,7 @@ public class PauseMenu : MonoBehaviour
         GameManager.ScoreSum = 0;  //Resets the score
     }
 
-    public void Save()
+    public void Save() // go to name menu page
     {
         exitMenu.SetActive(false);
         nameMenu.SetActive(true);
@@ -82,7 +82,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     private string s;
-    public void ReadStringInput(string input)
+    public void ReadStringInput(string input) // Save your name to the highscore list
     {
             s = input;
             UnityEngine.Debug.Log(input);

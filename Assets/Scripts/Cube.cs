@@ -10,11 +10,10 @@ public class CubeScript : MonoBehaviour
     public int speed;
     private float delay;
     // Start is called before the first frame update
-    void Start()
+    void Start() // creat a delay to mach the first box with the music
     {
         int diff = PlayerPrefs.GetInt("Difficulty");
         speed = 5 + 3*diff; // speed = 8 if easy, 11 if medium, 14 if hard 
-
 
                             // delay = 6; for easy
                             // delay = 4.2; for medium
@@ -22,7 +21,6 @@ public class CubeScript : MonoBehaviour
         if(diff == 1)
         {
             delay = 5.8F;
-           
         }
         else if(diff == 2)
         {
@@ -35,7 +33,6 @@ public class CubeScript : MonoBehaviour
         else
         {
             delay = 6.0F;
-
         }
        
     }

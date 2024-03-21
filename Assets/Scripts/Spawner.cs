@@ -75,7 +75,7 @@ public class Spawner : MonoBehaviour
             timer -= delay;     
             delay = 0;
         }
-        if(timer>beat && delay == 0){
+        if(timer>beat && delay == 0){ // wait for next beat after delay time
             int[] arr = boxArr(i);
             int c = arr[0];
             int p = arr[1];
@@ -83,7 +83,7 @@ public class Spawner : MonoBehaviour
                 GameObject cube = Instantiate(cubes[c], points[p]);     // spawns a cube with a color blue ore read at point p
                 cube.transform.localPosition = Vector3.zero;
             }
-            else if (c == 2){
+            else if (c == 2){ // combination of two boxes. Easy to add more cobinations if wanted
                 if(p == 0){   // blue top left, red top right
                     GameObject cube = Instantiate(cubes[1], points[1]);
                     cube.transform.localPosition = Vector3.zero; 

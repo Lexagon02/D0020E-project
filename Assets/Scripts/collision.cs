@@ -15,16 +15,14 @@ public class collision : MonoBehaviour
     AudioManager audioManager;
     public GameObject Explosion;
     public CubeScript cube;
-
     private Rigidbody rb;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-    public void OnCollisionEnter(Collision collision){
+    public void OnCollisionEnter(Collision collision){  // registers when the sword hitts a cube
         if (collision.gameObject.layer == this.gameObject.layer) {
-            Debug.Log(gameObject.layer);
             GameManager.ScoreSum++; //add 1 to scoreSum
             GameManager.ScoreBonus++; // add 1 to bonus
             GameManager.Score(); //calcukates the bonus
@@ -40,16 +38,13 @@ public class collision : MonoBehaviour
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
             exp.transform.parent = cube.transform;
             Destroy(exp, 1);
-            audioManager.PlaySFX(audioManager.BoxDestroyed);
-
+            audioManager.PlaySFX(audioManager.BoxDestroyed); // plays sound effect
         }
     }
-
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == this.gameObject.tag)
         {
-          
             GameManager.ScoreBonus = 0; //resets scorebonus to zero
             GameManager.Score();    //calcukates the bonus
             Script_show.showBonus = true; //fade animation is on
@@ -60,16 +55,5 @@ public class collision : MonoBehaviour
             rb.velocity = new Vector3(-1, 0, 0);
             Destroy(transform.parent.gameObject);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

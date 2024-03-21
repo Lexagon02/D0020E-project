@@ -11,7 +11,7 @@ public class MenuMusic : MonoBehaviour
 
         DontDestroyOnLoad(transform.gameObject);
         
-        if (GameObject.FindGameObjectsWithTag("menuMusic").Length == 1)
+        if (GameObject.FindGameObjectsWithTag("menuMusic").Length == 1) 
         {
             changeVolume();
             PlayMusic();
@@ -23,23 +23,22 @@ public class MenuMusic : MonoBehaviour
 
     }
 
-    public void changeVolume()
+    public void changeVolume() // uppdates music volume
     {
         audioSource = GetComponent<AudioSource>();
         float menuVolume = PlayerPrefs.GetFloat("menuMusic");
         audioSource.volume = menuVolume;
     }
 
-    public void PlayMusic()
+    public void PlayMusic() // starts music 
     {
 
         if (audioSource.isPlaying) return;
         audioSource.Play();
     }
 
-    public void StopMusic()
+    public void StopMusic() // stop/remove music object
     {
-        Debug.Log("stop");
         DestroyObject(transform.gameObject);
     }
 }

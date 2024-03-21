@@ -75,16 +75,16 @@ public class Highscore : MonoBehaviour
         switch (selectedDiff)//Choose the selected difficulty
         {
             default:
-                selectedDiff = 2;
+                selectedDiff = 2; // default difficulity normal = 2
                 break;
             case 1:
-                selectedDiff = 2;
+                selectedDiff = 2;   // normal
                 break;
             case 2:
-                selectedDiff = 3;
+                selectedDiff = 3;   // hard
                 break;
             case 3:
-                selectedDiff = 1;
+                selectedDiff = 1; // easy
                 break;
         };
         existingScore = GameObject.FindGameObjectsWithTag("score");

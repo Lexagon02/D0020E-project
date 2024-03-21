@@ -20,21 +20,21 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    public void Easy(){
+    public void Easy(){         // load easy level
         SceneManager.LoadScene("Main Easy");
         PlayerPrefs.SetInt("Difficulty",1);
     }
 
-    public void Medium(){
+    public void Medium(){       // load medium level
         SceneManager.LoadScene("Main Easy");
         PlayerPrefs.SetInt("Difficulty", 2);
     }
 
-    public void Hard(){
+    public void Hard(){         // load hard level
         SceneManager.LoadScene("Main Easy");
         PlayerPrefs.SetInt("Difficulty", 3);
     }
-    public void Highscore()
+    public void Highscore()     // load highscore seen
     {
         SceneManager.LoadScene("Highscore");
     }
@@ -42,11 +42,10 @@ public class MainMenu : MonoBehaviour
     {
         GameObject music = GameObject.FindGameObjectWithTag("menuMusic");
         DestroyObject(music);
-        print("stop");
     }
 
 
-    public void Quit() {
+    public void Quit() { // quit game
     #if UNITY_STANDALONE
         UnityEngine.Application.Quit();
     #endif

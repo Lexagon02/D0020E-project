@@ -23,16 +23,9 @@ public class AudioManager : MonoBehaviour
 
     private bool isPaused = false;
     
-
-
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        
-    }
-    public void musicPlayer(){
+    public void musicPlayer(){      // Start music based on difficulity 
         int diff = PlayerPrefs.GetInt("Difficulty");
         float musicVolume = PlayerPrefs.GetFloat("gameMusic");
         
@@ -70,11 +63,11 @@ public class AudioManager : MonoBehaviour
         }
     }
     void Start(){
-        musicPlayer();
+        musicPlayer(); // starts the correct music
     }
 
     
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip)     // plays the sound when hitting a box 
     {
         float gameVolume = PlayerPrefs.GetFloat("gameSound");
         SFXSource.volume=gameVolume;
