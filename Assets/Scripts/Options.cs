@@ -15,14 +15,14 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Set sliders to saved values, or default them to 0.5
-        if (PlayerPrefs.GetFloat("menuMusic") == null) { menuMusic = 0.5f;}
+        //Set sliders to saved values, or default them to 0.1
+        if (PlayerPrefs.GetFloat("menuMusic") == null) { menuMusic = 0.1f;}
         else { menuMusic = PlayerPrefs.GetFloat("menuMusic");}
 
-        if (PlayerPrefs.GetFloat("gameMusic") == null){gameMusic = 0.5f;}
+        if (PlayerPrefs.GetFloat("gameMusic") == null){gameMusic = 0.1f;}
         else{gameMusic = PlayerPrefs.GetFloat("gameMusic");}
 
-        if (PlayerPrefs.GetFloat("gameSound") == null){ gameSound = 0.5f;}
+        if (PlayerPrefs.GetFloat("gameSound") == null){ gameSound = 0.1f;}
         else{ gameSound = PlayerPrefs.GetFloat("gameSound");};
 
         menuMusicSlider.value = menuMusic;

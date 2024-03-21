@@ -11067,7 +11067,7 @@ GameObject:
   - component: {fileID: 386829243}
   m_Layer: 7
   m_Name: redSword
-  m_TagString: Player
+  m_TagString: redPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11198,7 +11198,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!1 &390157209
 GameObject:
@@ -11484,7 +11484,7 @@ GameObject:
   - component: {fileID: 601271151}
   m_Layer: 6
   m_Name: blueSword
-  m_TagString: Player
+  m_TagString: bluePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11514,7 +11514,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &601271152
 MonoBehaviour:

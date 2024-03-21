@@ -13,6 +13,8 @@ TagManager:
   - menuMusic
   - Box
   - pause
+  - redPlayer
+  - bluePlayer
   layers:
   - Default
   - TransparentFX
