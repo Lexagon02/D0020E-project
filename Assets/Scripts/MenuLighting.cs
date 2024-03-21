@@ -5,13 +5,8 @@ using UnityEngine;
 
 public class MenuLighting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    // For random light effect in main menu
     public Light myLight;
 
     float interval = 1;
@@ -22,8 +17,8 @@ public class MenuLighting : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > interval)
         {
-            myLight.enabled = !myLight.enabled;
-            interval = UnityEngine.Random.Range(0f, 1f);
+            myLight.enabled = !myLight.enabled;//Turn off/on light
+            interval = UnityEngine.Random.Range(0f, 1f);//Set new interval to random number
             timer = 0;
         }
     }

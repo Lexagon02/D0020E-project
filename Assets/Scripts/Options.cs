@@ -15,7 +15,7 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Set sliders to saved values, or default them to 50
+        //Set sliders to saved values, or default them to 0.5
         if (PlayerPrefs.GetFloat("menuMusic") == null) { menuMusic = 0.5f;}
         else { menuMusic = PlayerPrefs.GetFloat("menuMusic");}
 
@@ -30,22 +30,21 @@ public class Options : MonoBehaviour
         gameSoundSlider.value = gameSound;
     }
 
-    public void changeGameSound(float newValue)
+    public void changeGameSound(float newValue)//Change GameSound value and save to PlayerPrefs
     {
-        print(newValue);
         gameSound= newValue;
         PlayerPrefs.SetFloat("gameSound", newValue);
     }
-    public void changeGameMusic(float newValue)
+    public void changeGameMusic(float newValue)//Change Game Music value and save to PlayerPrefs
     {
         gameMusic = newValue;
         PlayerPrefs.SetFloat("gameMusic", newValue);
     }
-    public void changeMenuMusic(float newValue)
+    public void changeMenuMusic(float newValue)//Change Menu Music value and save to PlayerPrefs
     {
         menuMusic = newValue;
         PlayerPrefs.SetFloat("menuMusic", newValue);
         GameObject music = GameObject.FindGameObjectWithTag("menuMusic");
-        music.GetComponent<MenuMusic>().changeVolume();
+        music.GetComponent<MenuMusic>().changeVolume();//Update menu music to new value
     }
 }

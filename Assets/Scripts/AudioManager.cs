@@ -28,12 +28,14 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
 
     private void Awake()
-    {   
+    {
         //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        
     }
     public void musicPlayer(){
         int diff = PlayerPrefs.GetInt("Difficulty");
         float musicVolume = PlayerPrefs.GetFloat("gameMusic");
+        
         if (diff == 1){ // easy
             easy.PlayDelayed(5.77f); // swich 5 to beat for the difficulity in spawner to match cubes
             Debug.Log(musicVolume);
@@ -74,6 +76,8 @@ public class AudioManager : MonoBehaviour
     
     public void PlaySFX(AudioClip clip)
     {
+        float gameVolume = PlayerPrefs.GetFloat("gameSound");
+        SFXSource.volume=gameVolume;
         SFXSource.PlayOneShot(clip);
     }
 }
