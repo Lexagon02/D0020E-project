@@ -46,11 +46,15 @@ public class MainMenu : MonoBehaviour
 
 
     public void Quit() { // quit game
-    #if UNITY_STANDALONE
+        foreach (var process in Process.GetProcessesByName("colorTracking"))
+        {
+            process.Kill();
+        }
+#if UNITY_STANDALONE
         UnityEngine.Application.Quit();
-    #endif
-    #if UNITY_EDITOR
+#endif
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-    #endif
-}
+#endif
+    }
 }

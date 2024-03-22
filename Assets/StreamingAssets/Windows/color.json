@@ -1,0 +1,8 @@
+{
+    "colors": {
+        "red_lower": [0, 90, 80],
+	"red_upper": [30, 255, 255],
+	"blue_lower": [115, 80, 99],
+	"blue_upper": [120, 100, 100]
+    }
+}

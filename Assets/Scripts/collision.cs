@@ -34,6 +34,7 @@ public class collision : MonoBehaviour
             transform.parent.gameObject.layer=9;
             rb.velocity = new Vector3(3, -15, 0);
             rb.mass = 2000;
+            rb.AddTorque(UnityEngine.Random.Range(100, 500), UnityEngine.Random.Range(100, 500), UnityEngine.Random.Range(100, 500));
             Destroy(transform.parent.gameObject,3);
             GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity);
             exp.transform.parent = cube.transform;

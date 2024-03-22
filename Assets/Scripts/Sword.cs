@@ -25,9 +25,11 @@ public class swordObject : MonoBehaviour
     {
         int[] coords = new int[6];
         int i = 0;
+        string path = Application.streamingAssetsPath + "/Windows/" + "coordinates.csv";
+        //string path = Application.streamingAssetsPath + "/Mac/" + "coordinates.csv";
         try
         {
-            using (var reader = new StreamReader(Application.streamingAssetsPath + "/" + "coordinates.csv"))
+            using (var reader = new StreamReader(path))
             {
                 while (!reader.EndOfStream)
                 {
