@@ -1,4 +1,4 @@
-In the repo there is two builds provided, one for Windows and Mac each
+In the repo there is two builds provided, one for Windows and and one for Mac.
 
 In order to run the game you must have a camera connected. Use the "runGame.bat" file to start the game, which opens both the python colortracking script and the game. 
 
